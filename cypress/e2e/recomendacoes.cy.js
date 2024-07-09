@@ -2,11 +2,15 @@
 
 const { it, interfaces } = require("mocha");
 
-describe('US-012-Funcionalidade: Cadastro de membros', () => {
+describe('US-015-Funcionalidade: Recomendações', () => {
  beforeEach(() => {
   cy.visit('/')
 
  })})
+
+ afterEach(() => {
+   cy.screenshot ()
+});
 
  describe('US-015-Funcionalidade: Recomendações', () => {
     it('Deve mostrar as recomendações do dia', () => {

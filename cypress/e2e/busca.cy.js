@@ -1,12 +1,17 @@
 /// <reference types="cypress"/>
 
-const { it, interfaces } = require("mocha");
+const { it, interfaces, after } = require("mocha");
+
 describe('US-001-Funcionalidade: Busca de filmes com palavra-chave valida', () => {
     beforeEach(() => {
      cy.visit('/')
    
     });
     
+    afterEach(() => {
+        cy.screenshot ()
+    });
+
     it('Deve retornar com sucesso um filme com a busca', () => {
       cy.get('#search-input').type ("matrix")
       cy.get('#search-button').click()
