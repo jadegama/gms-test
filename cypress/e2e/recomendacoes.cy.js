@@ -14,15 +14,14 @@ describe('US-015-Funcionalidade: Recomendações', () => {
 
  describe('US-015-Funcionalidade: Recomendações', () => {
     it('Deve mostrar as recomendações do dia', () => {
-     cy.visit('http://127.0.0.1:8080/')
-     cy.get('#recommendations-section')
+     cy.visit('#recommendations-section')
+     cy.get('#recommendations-section > h2')
      
     });
 
     it('Deve mostrar de 4 e 5 filmes listados', () => {
-     cy.visit('http://127.0.0.1:8080/')
-     cy.get('#recommendations-section')
-     
+     cy.visit('#recommendations-section')
+     cy.get('#recommendations-section > h2')
     })
    
    })

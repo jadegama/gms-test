@@ -17,12 +17,11 @@ describe('US-012-Funcionalidade: Cadastro de membros', () => {
     var email = `jade${Date.now()}@teste.com`
     cy.PreencherCadastro('Jade', 'Gama', email, '145816511', 'Teste@12345')
     cy.get('#signup-response').should('contain' , 'Cadastro realizado com sucesso!')
-  })
+  });
 
   it('Deve fazer o cadastro de campos obrigatórios, observando se o nome não está vazio', () => {
     var email = `jade${Date.now()}@teste.com`
 
-    cy.visit('http://127.0.0.1:8080/')
     cy.get ('#signup-firstname').type (" ")
     cy.get('#signup-lastname').type ("AD")
     cy.get('#signup-email').type (email)
@@ -30,7 +29,7 @@ describe('US-012-Funcionalidade: Cadastro de membros', () => {
     cy.get('#signup-password').type ("Teste!2020")
     cy.get('#signup-button').click()
     cy.get('#signup-response').should('contain' , 'Cadastro realizado com sucesso!')
-})
+});
 
 it('Deve validar mensagem de erro com o nome campo inválido', () => {
   cy.PreencherCadastro('Jade20', 'Gama', 'jade@test.com', '145816511', 'Teste@12345')
